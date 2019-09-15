@@ -1,0 +1,41 @@
+# pyLODE Inject configuration file (https://github.com/edmondchuc/pylode-inject)
+
+logo:
+  src: 'https://www.tern.org.au/rs/7/sites/998/custom_files/tpl_images/assets/images/logo.png'
+  alt: TERN logo.
+  href: 'https://www.tern.org.au'
+
+overview:
+  p: This section contains diagrams overviewing the SOSA/SSN vocabulary's Observation, Sample & Feature of Interest classes used in PLOT.
+  figures:
+    - figure:
+        src: http://www.linked.data.gov.au/def/plot/images/Observation.png
+        alt: Observation class overview diagram.
+        caption: Observation class overview
+    - figure:
+        src: http://www.linked.data.gov.au/def/plot/images/FOI.png
+        alt: Feature of Interest class overview diagram.
+        caption: Feature of Interest class overview
+
+classes:
+  figures:
+    - figure:
+        id: location
+        src: http://www.linked.data.gov.au/def/plot/images/Location.png
+        alt: Location class overview diagram.
+        caption: Location class overview
+    - figure:
+        id: organismoccurence
+        src: http://www.linked.data.gov.au/def/plot/images/OrganismOccurrence.png
+        alt: Organism occurrence class overview diagram.
+        caption: Organism Occurrence class overview
+    - figure:
+        id: siteorlocation
+        src: http://www.linked.data.gov.au/def/plot/images/Site.png
+        alt: Site class overview diagram.
+        caption: Site class overview
+    - figure:
+        id: survey
+        src: http://www.linked.data.gov.au/def/plot/images/Activities.png
+        alt: Survey overview diagram.
+        caption: Properties of <a href="http://www.w3.org/ns/prov#Activity">prov:Activity</a> and SOSA specialisations of it that a Survey may use being, itself, a specialisation of <a href="http://www.w3.org/ns/prov#Activity">prov:Activity</a>

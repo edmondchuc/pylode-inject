@@ -97,10 +97,12 @@ def add_figures_to_classes(soup, config, figures_count):
 @click.command()
 @click.argument('config_file', type=click.Path(exists=True))
 @click.argument('html_file', type=click.Path(exists=True))
-def inject(config_file, html_file):
+@click.argument('output_html_file', type=click.Path())
+def inject(config_file, html_file, output_html_file):
     """Inject logo images, links, paragraphs, and figures to a pyLODE document.\n
     CONFIG_FILE: The YAML-based configuration file.\n
-    HTML_FILE: The pyLODE HTML file."""
+    HTML_FILE: The pyLODE HTML file.\n
+    OUTPUT_HTML_FILE: The file output with the injected result."""
     with open(config_file) as f:
         config = yaml.safe_load(f)
 
@@ -125,11 +127,12 @@ def inject(config_file, html_file):
 
     # Write processed HTML to file.
     click.echo('Writing to disk...')
-    with open('output.html', 'w') as f:
+    with open(output_html_file, 'w') as f:
         # Output with formatter=None to not escape HTML in strings.
         f.writelines(str(soup.prettify(formatter=None)))
 
-    click.echo('Finish.')
+    click.echo('Output file: {}'.format(output_html_file))
+    click.echo('Finished.')
 
 
 if __name__ == '__main__':
