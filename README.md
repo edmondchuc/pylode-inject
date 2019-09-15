@@ -2,7 +2,7 @@
 
 *Inject logo images, links, paragraphs, and figures to a pyLODE document.*
 
-Easy do the above by defining the instructions in a YAML file and passing it to the command line application.
+Easily do the above by defining the instructions in a YAML file and passing it to the command line application.
 
 # Usage
 Clone this repository and change directory into it.
