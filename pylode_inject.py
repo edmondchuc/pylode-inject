@@ -96,12 +96,15 @@ def add_figures_to_classes(soup, config, figures_count):
 
 @click.command()
 @click.argument('config_file', type=click.Path(exists=True))
-def inject(config_file):
-    """CONFIG_FILE: The YAML-based configuration file."""
+@click.argument('html_file', type=click.Path(exists=True))
+def inject(config_file, html_file):
+    """Inject logo images, links, paragraphs, and figures to a pyLODE document.\n
+    CONFIG_FILE: The YAML-based configuration file.\n
+    HTML_FILE: The pyLODE HTML file."""
     with open(config_file) as f:
         config = yaml.safe_load(f)
 
-    with open("index.html") as f:
+    with open(html_file) as f:
         soup = BeautifulSoup(f, 'html.parser')
 
         click.echo('Adding logo...')
