@@ -70,8 +70,16 @@ def add_figures(soup, config):
 
 
 def add_figures_to_classes(soup, config, figures_count):
+    """
+    Add figures to the Classes, Object Properties, and Datatype Properties section of the pyLODE document
+    by the id attribute.
+    """
+    total_figures_count = len(config['classes']['figures'])
+    success_count = 0
+    failed_figures = []
     for i, figure in enumerate(config['classes']['figures'], start=figures_count+1):
         figure = figure['figure']
+        found = False
         for div in soup.find_all('div'):
             if div['id'] == figure['id']:
                 # Add image to figure tag.
@@ -91,6 +99,12 @@ def add_figures_to_classes(soup, config, figures_count):
                 figure_caption_tag['style'] = 'padding-bottom: 3rem'
 
                 div.append(figure_tag)
+
+                success_count += 1
+                found = True
+        if not found:
+            failed_figures.append(figure['id'])
+    assert success_count == total_figures_count, 'Failed: {}'.format(failed_figures)
     return soup
 
 

@@ -25,7 +25,7 @@ classes:
         alt: Location class overview diagram.
         caption: Location class overview
     - figure:
-        id: organismoccurence
+        id: organismoccurrence
         src: http://www.linked.data.gov.au/def/plot/images/OrganismOccurrence.png
         alt: Organism occurrence class overview diagram.
         caption: Organism Occurrence class overview
