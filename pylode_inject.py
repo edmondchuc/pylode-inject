@@ -104,7 +104,7 @@ def add_figures_to_classes(soup, config, figures_count):
                 found = True
         if not found:
             failed_figures.append(figure['id'])
-    assert success_count == total_figures_count, 'Failed: {}'.format(failed_figures)
+    assert success_count == total_figures_count, 'Failed to add figures: {}'.format(failed_figures)
     return soup
 
 
