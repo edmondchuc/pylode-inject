@@ -143,7 +143,7 @@ def inject(config_file, html_file, output_html_file):
     click.echo('Writing to disk...')
     with open(output_html_file, 'w') as f:
         # Output with formatter=None to not escape HTML in strings.
-        f.writelines(str(soup.prettify(formatter=None)))
+        f.writelines(str(soup.prettify(formatter='html5')))
 
     click.echo('Output file: {}'.format(output_html_file))
     click.echo('Finished.')
